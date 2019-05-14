@@ -7,5 +7,3 @@ def id_gen(length):
     for i in range(length):
         key += chars[random.randint(0, len(chars)-1)]
     return key
-
-print(id_gen(9))
