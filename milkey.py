@@ -7,7 +7,7 @@ BASE = {
     16: "0123456789abcdef"
 }
 
-# You could also set an environment variable string:
+# You could also set a simple environment variable string:
 # BASE_16 = "0123456789abcdef"
 # but if you use more than a few bases I suggest you set up a dictionary
 
@@ -20,10 +20,13 @@ def id_gen(length, base = BASE[16]):
 
     # key is a string made of random choices from a base repeated length times
     key = ''.join([rchoice(base) for i in range(length)])
-    # numpy.random counterpart for this method
+
+    # numpy.random counterpart for this method:
     # ''.join(numpy.random.choice(list(base), length))
+
     # if you decide to use numpy you can avoid creating the lists here
-    # by defining the base as a list already
+    # by defining the base as a list before the calling the function
+    # (i.e. in the environment variables)
     # (useful if you have to repeat this many times over)
 
     # the method you had before is a bit inhumane:
